@@ -1,0 +1,201 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.5.dtd" >
+   <PATCH nodename="C:\Users\robi\Desktop\jesuiten\_Root.v4p" systemname="_Root" filename="C:\Users\robi\Desktop\jesuiten\_Root.v4p" scrollx="0" scrolly="360">
+   <BOUNDS type="Window" left="16770" top="1920" width="9000" height="9885">
+   </BOUNDS>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="Logic" filename="Sub\Logic.v4p" nodename="Sub\Logic.v4p" componentmode="InAWindow" id="0">
+   <BOUNDS type="Node" left="1905" top="1830" width="1725" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="17415" top="4785" width="16695" height="8385">
+   </BOUNDS>
+   <PIN pinname="State:Outro" visible="1">
+   </PIN>
+   <PIN pinname="State:Video" visible="1">
+   </PIN>
+   <PIN pinname="State:Current" visible="1">
+   </PIN>
+   <PIN pinname="Serial:Command" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1905" top="1830">
+   </BOUNDS>
+   <PIN pinname="Trigger:VideoFinished" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="SerialCommunication" filename="Sub\SerialCommunication.v4p" nodename="Sub\SerialCommunication.v4p" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="1905" top="975" width="2250" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="19200" top="8805" width="10605" height="11145">
+   </BOUNDS>
+   <PIN pinname="Command" visible="1">
+   </PIN>
+   <PIN pinname="UUID" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1905" top="975">
+   </BOUNDS>
+   <PIN pinname="LaunchJesuit" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Player" filename="Sub\Player.v4p" nodename="Sub\Player.v4p" componentmode="InAWindow" id="2">
+   <BOUNDS type="Node" left="1905" top="3795" width="2310" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9225" top="6285" width="11190" height="9150">
+   </BOUNDS>
+   <PIN pinname="Command:Video" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Command:Outro" visible="1">
+   </PIN>
+   <PIN pinname="UUID" visible="1" slicecount="1" values="idle">
+   </PIN>
+   <BOUNDS type="Box" left="1905" top="3795">
+   </BOUNDS>
+   <PIN pinname="LaunchJesuit" visible="1">
+   </PIN>
+   <PIN pinname="VideoFinisehd" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="showVideoPlane" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="State:Outro" dstnodeid="2" dstpinname="Command:Outro">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="State:Video" dstnodeid="2" dstpinname="Command:Video">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Command" dstnodeid="0" dstpinname="Serial:Command">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="UUID" dstnodeid="2" dstpinname="UUID">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3">
+   <BOUNDS type="Box" left="3570" top="2430" width="2760" height="1155">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3570" top="2430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="45">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="State:Current" dstnodeid="3" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="LaunchJesuit" dstnodeid="1" dstpinname="LaunchJesuit">
+   <LINKPOINT x="3060" y="4530">
+   </LINKPOINT>
+   <LINKPOINT x="1155" y="4530">
+   </LINKPOINT>
+   <LINKPOINT x="1155" y="555">
+   </LINKPOINT>
+   <LINKPOINT x="1965" y="555">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="VideoFinisehd" dstnodeid="0" dstpinname="Trigger:VideoFinished">
+   <LINKPOINT x="4185" y="4560">
+   </LINKPOINT>
+   <LINKPOINT x="4740" y="4560">
+   </LINKPOINT>
+   <LINKPOINT x="4740" y="1620">
+   </LINKPOINT>
+   <LINKPOINT x="3570" y="1620">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="4">
+   <BOUNDS type="Node" left="1455" top="6150" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1455" top="6150" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2565" top="-105" width="8910" height="14865">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1590" top="5640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Texture Out" dstnodeid="5" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="SetAlpha (Color)" nodename="SetAlpha (Color)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="3030" top="5115" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Alpha" visible="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="5" dstpinname="Color">
+   </LINK>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1725" top="5115" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Transform Out" dstnodeid="5" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Box" left="2250" top="4665" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2250" top="4665" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.87">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="8" dstpinname="ScaleX">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="8" dstpinname="ScaleY">
+   </LINK>
+   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="1050" top="5085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="Blend">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Render State" dstnodeid="5" dstpinname="Render State">
+   </LINK>
+   <NODE systemname="LinearFilter (Animation)" nodename="LinearFilter (Animation)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="3690" top="4725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Position Out" dstnodeid="6" dstpinname="Alpha">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="showVideoPlane" dstnodeid="11" dstpinname="Go To Position">
+   </LINK>
+   </PATCH>
