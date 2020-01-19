@@ -2,13 +2,15 @@
 
 162 ways to die is an interactive installation making the stories behind 162 copper engraving of Jesuit monks in the 17th century accessible to museum visitors in an engaging way.
 
-This project was build during the [Coding Da Vinci Süd 2019](https://codingdavinci.de/events/sued/)hackathon by Georg, Kelvyn, Michael, Robi.
+This project was build during the Coding Da Vinci Süd 2019 hackathon by Georg, Kelvyn, Michael, Robi.
+
+[**Watch project teaser**](https://vimeo.com/345112605)
+
+[**Watch the story of Antonius Iscida**](https://vimeo.com/345112605)
 
 ![162 ways to die cover](./docs/images/162waystodie-cover_imx.jpg)
 
-[**Watch our project teaser**](https://vimeo.com/345112605)
 
-[**Watch the story of Antonius Iscida**](https://vimeo.com/345112605)
 
 ## Source code
 **The Repo is split in 3 parts**
