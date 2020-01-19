@@ -8,6 +8,8 @@ This project was build during the Coding Da Vinci Süd 2019 hackathon by Georg, 
 
 [**Watch the story of Antonius Iscida**](https://vimeo.com/345112605)
 
+[**See project case study**](http://kelvyn.net/work/162waystodie/)
+
 ![162 ways to die cover](./docs/images/162waystodie-cover_imx.jpg)
 
 
